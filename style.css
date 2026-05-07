@@ -1,187 +1,155 @@
-/* --- 1. IMPORT FONT & ICON --- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+/* --- GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
 
-/* --- 2. RESET DASAR --- */
+/* --- RESET & DASAR --- */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-box: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    background-color: #a00000; /* Warna merah dasar Occupy */
     color: white;
     overflow-x: hidden;
-}
-
-/* --- 3. TEMA BACKGROUND --- */
-body.home-bg {
-    height: 100vh;
-    overflow-y: hidden;
-    background: linear-gradient(to bottom, rgba(160, 0, 0, 0.9) 0%, rgba(113, 0, 0, 0.8) 100%), 
-                url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
-
-body.subpage-bg {
     min-height: 100vh;
-    background: linear-gradient(to bottom, rgba(160, 0, 0, 0.95) 0%, rgba(113, 0, 0, 0.8) 100%), 
-                url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+}
+
+/* --- BACKGROUND ANIMASI --- */
+.home-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(160, 0, 0, 0.8)), 
+                url('background.jpg'); /* Pastikan file background.jpg ada */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-/* --- 4. NAVIGASI --- */
-.nav-center {
+/* --- LOGO --- */
+.logo {
     position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 40px;
-    padding: 18px 50px;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    z-index: 10;
-}
-
-.nav-center a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 3px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    cursor: pointer;
+    top: 30px;
+    left: 30px;
+    width: 80px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: 0.3s;
 }
 
-.nav-center a:hover { opacity: 0.6; }
-
-body.nav-is-up .nav-center {
-    top: 45px;
-    left: calc(100% - 50px);
-    transform: translateX(-100%);
-    background: transparent;
-    backdrop-filter: none;
-    border: none;
-    box-shadow: none;
-    padding: 0;
+.logo:hover {
+    transform: scale(1.1);
 }
 
-.nav-top {
-    width: 100%;
+/* --- KONTEN UTAMA --- */
+.main-content {
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+.home-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    letter-spacing: 15px;
+    margin-bottom: 0;
+    line-height: 1;
+    text-shadow: 2px 5px 15px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    font-weight: 300;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* --- SOSIAL MEDIA --- */
+.social-icons {
+    margin-top: 25px;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 40px 50px;
-    gap: 40px;
-    z-index: 100;
+    justify-content: center;
+    gap: 20px;
 }
 
-.nav-top a {
+.social-icons a {
     color: white;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.nav-top a:hover { opacity: 0.6; }
-
-/* --- 5. ELEMEN HOME --- */
-.logo { position: absolute; top: 40px; left: 40px; width: 120px; border-radius: 12px; transition: all 0.8s ease; }
-.main-content { margin-top: -60px; z-index: 1; transition: opacity 0.6s ease, transform 0.6s ease; }
-.home-title { font-family: 'Playfair Display', serif; font-size: 6rem; letter-spacing: 18px; font-weight: 700; line-height: 1; margin-bottom: 10px; text-shadow: 2px 4px 15px rgba(0,0,0,0.4); }
-.subtitle { font-size: 1.5rem; letter-spacing: 10px; text-transform: uppercase; opacity: 0.9; margin-bottom: 20px; }
-.social-icons { display: flex; justify-content: center; gap: 25px; }
-.social-icons a { color: white; font-size: 1.8rem; transition: 0.3s; }
-.social-icons a:hover { transform: scale(1.2); color: #ffb3b3; }
-
-.footer-home { 
-    position: absolute; 
-    bottom: 20px; 
-    font-size: 0.8rem; 
-    color: white; 
-    opacity: 0.9; 
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* --- 6. ELEMEN SUBPAGE --- */
-.logo-small { position: absolute; top: 30px; left: 40px; width: 100px; border-radius: 8px; }
-.section-header { text-align: center; margin: 40px 0; animation: fadeInDown 1s ease-out; }
-.section-header h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; letter-spacing: 8px; text-transform: uppercase; }
-
-.footer-sub { 
-    padding: 40px; 
-    text-align: center; 
-    color: white; 
-    font-size: 0.9rem; 
-    margin-top: auto; 
-    width: 100%;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
     opacity: 0.8;
 }
 
-/* --- 7. GRID MENU & CARD --- */
-.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; width: 90%; max-width: 1200px; margin-bottom: 60px; animation: fadeInUp 1s ease-out; }
-.menu-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; overflow: hidden; position: relative; transition: transform 0.4s ease, box-shadow 0.4s ease; }
-.menu-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
-.menu-image { width: 100%; height: 250px; background-size: cover; background-position: center; }
-.menu-info { padding: 20px; text-align: center; }
-.menu-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px; letter-spacing: 2px; }
-.menu-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(160, 0, 0, 0.9); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.4s ease; }
-.menu-card:hover .menu-overlay { opacity: 1; }
-.menu-overlay p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; text-align: center;}
-.price { font-weight: 600; font-size: 1.2rem; background: white; color: #a00000; padding: 5px 20px; border-radius: 50px; }
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: #ffb3b3;
+    opacity: 1;
+}
 
-/* --- 8. MAPS LOKASI (HOME) --- */
+/* --- MAPS STYLING --- */
 .location-section {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    animation: fadeInUp 1.2s ease-out;
+    margin-top: 30px;
 }
 
 .map-frame {
+    display: inline-block;
     padding: 8px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: 0.4s ease;
 }
 
 .map-frame:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
+    background: rgba(255, 255, 255, 0.15);
 }
 
-.map-frame iframe {
-    border-radius: 15px;
-    filter: grayscale(100%) invert(90%) contrast(90%);
-    transition: 0.5s;
+/* --- FOOTER --- */
+.footer-home {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    z-index: 10;
 }
 
-.map-frame:hover iframe {
-    filter: grayscale(0%) invert(0%);
+/* --- ANIMASI --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* --- 9. ANIMASI --- */
-@keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+/* --- RESPONSIVE UNTUK LAYAR KECIL --- */
+@media (max-width: 768px) {
+    .home-title {
+        font-size: 3rem;
+        letter-spacing: 8px;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 4px;
+    }
+
+    .logo {
+        width: 60px;
+        top: 20px;
+        left: 20px;
+    }
+}
