@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALLERY | OCCUPY COFFEE & SPACE</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style khusus galeri untuk tampilan yang lebih artistik */
+        .gallery-container {
+            column-count: 3;
+            column-gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            border-color: white;
+        }
+
+        @media (max-width: 900px) {
+            .gallery-container { column-count: 2; }
+        }
+        @media (max-width: 600px) {
+            .gallery-container { column-count: 1; }
+        }
+    </style>
+    <link rel="icon" type="image/jpg" href="logoaplikasi.png.jpg">
+</head>
+<body class="subpage-bg">
+
+    <a href="index.html?moved=true">
+        <img src="logoaplikasi.png.jpg" alt="Logo" class="logo-small">
+    </a>
+
+    <nav class="nav-top">
+        <a onclick="goTo('index.html?moved=true')">Home</a>
+        <a onclick="goTo('about.html')">About</a>
+        <a onclick="goTo('bestsellers.html')">Best Seller</a>
+        <a onclick="goTo('gallery.html')">Gallery</a>
+        <a onclick="goTo('team.html')">Our Team</a>
+    </nav>
+
+    <header class="section-header">
+        <h2>Visual Space</h2>
+        <p>Sudut kenyamanan dan momen berharga di Occupy</p>
+    </header>
+
+    <main class="gallery-container">
+        <!-- Foto 1 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Coffee Interior">
+        </div>
+        <!-- Foto 2 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80" alt="Espresso Machine">
+        </div>
+        <!-- Foto 3 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Coffee Table">
+        </div>
+        <!-- Foto 4 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Chill Vibes">
+        </div>
+        <!-- Foto 5 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1459756262411-29858f269a21?auto=format&fit=crop&w=600&q=80" alt="Latte Art">
+        </div>
+        <!-- Foto 6 -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=600&q=80" alt="Workspace">
+        </div>
+    </main>
+
+    <div class="footer-sub">@occupy.coffee | Tag kami di momen terbaikmu!</div>
+
+    <script>
+        function goTo(page) {
+            const separator = page.includes('?') ? '&' : '?';
+            window.location.href = page.includes('moved') ? page : page + separator + "moved=true";
+        }
+    </script>
+</body>
+</html>

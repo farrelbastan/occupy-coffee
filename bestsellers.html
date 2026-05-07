@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEST SELLER | OCCUPY COFFEE & SPACE</title>
+    
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CSS tambahan khusus untuk layout menu agar lebih rapi */
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+    </style>
+    <link rel="icon" type="image/jpg" href="logoaplikasi.png.jpg">
+</head>
+<body class="subpage-bg">
+
+    <!-- Logo Kiri Atas (Klik untuk kembali ke Home) -->
+    <a href="index.html?moved=true">
+        <img src="logoaplikasi.png.jpg" alt="Logo Occupy" class="logo-small">
+    </a>
+
+    <!-- Navigasi Atas -->
+    <nav class="nav-top">
+        <a onclick="goTo('index.html?moved=true')">Home</a>
+        <a onclick="goTo('about.html')">About</a>
+        <a onclick="goTo('bestsellers.html')">Best Seller</a>
+        <a onclick="goTo('gallery.html')">Gallery</a>
+        <a onclick="goTo('team.html')">Our Team</a>
+    </nav>
+
+    <div class="container">
+        <!-- Header Halaman -->
+        <header class="section-header">
+            <h2>Our Best Seller</h2>
+            <p>Pilihan terbaik untuk menemani harimu di Occupy Space</p>
+        </header>
+
+        <!-- Grid Menu -->
+        <main class="menu-grid">
+            
+            <!-- Menu 1 -->
+            <div class="menu-card">
+                <div class="menu-image" style="background-image: url('https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="menu-info">
+                    <h3>Signature Latte</h3>
+                </div>
+                <div class="menu-overlay">
+                    <p>Perpaduan espresso premium dengan tekstur susu yang creamy dan sentuhan sirup rahasia kami.</p>
+                    <span class="price">Rp 28.000</span>
+                </div>
+            </div>
+
+            <!-- Menu 2 -->
+            <div class="menu-card">
+                <div class="menu-image" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="menu-info">
+                    <h3>V60 Manual Brew</h3>
+                </div>
+                <div class="menu-overlay">
+                    <p>Biji kopi pilihan (Single Origin) yang diseduh secara manual untuk mengeluarkan karakter rasa terbaik.</p>
+                    <span class="price">Rp 25.000</span>
+                </div>
+            </div>
+
+            <!-- Menu 3 -->
+            <div class="menu-card">
+                <div class="menu-image" style="background-image: url('https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="menu-info">
+                    <h3>Iced Brown Sugar</h3>
+                </div>
+                <div class="menu-overlay">
+                    <p>Es kopi susu legendaris dengan gula aren murni. Manisnya pas, segarnya maksimal.</p>
+                    <span class="price">Rp 22.000</span>
+                </div>
+            </div>
+
+            <!-- Menu 4 -->
+            <div class="menu-card">
+                <div class="menu-image" style="background-image: url('https://images.unsplash.com/photo-1579954115545-a95591f28bee?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="menu-info">
+                    <h3>Matcha Delight</h3>
+                </div>
+                <div class="menu-overlay">
+                    <p>Bubuk matcha asli Jepang yang dipadukan dengan susu segar. Favorit non-coffee kami!</p>
+                    <span class="price">Rp 26.000</span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-sub">
+        Jl. Sei Serayu No. 94, Babura Sunggal, Medan | Buka Setiap Hari: 13:00 - 23:59 | Nikmati Setiap Tegukan
+    </div>
+
+    <!-- Script Navigasi -->
+    <script>
+        function goTo(page) {
+            // Memastikan transisi antar halaman tetap halus
+            const separator = page.includes('?') ? '&' : '?';
+            window.location.href = page.includes('moved') ? page : page + separator + "moved=true";
+        }
+    </script>
+</body>
+</html>

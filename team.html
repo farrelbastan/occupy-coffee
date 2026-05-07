@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUR TEAM | OCCUPY COFFEE & SPACE</title>
+    
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Style khusus untuk halaman Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #ffb3b3;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .team-card p {
+            font-size: 0.9rem;
+            color: #ffb3b3;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-social a {
+            color: white;
+            font-size: 1.2rem;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .team-social a:hover {
+            opacity: 1;
+            color: #ffb3b3;
+        }
+    </style>
+    <link rel="icon" type="image/jpg" href="logoaplikasi.png.jpg">
+</head>
+<body class="subpage-bg">
+
+    <!-- Logo Kiri Atas -->
+    <a href="index.html?moved=true">
+        <img src="logoaplikasi.png.jpg" alt="Logo Occupy" class="logo-small">
+    </a>
+
+    <!-- Navigasi -->
+    <nav class="nav-top">
+        <a onclick="goTo('index.html?moved=true')">Home</a>
+        <a onclick="goTo('about.html')">About</a>
+        <a onclick="goTo('bestsellers.html')">Best Seller</a>
+        <a onclick="goTo('gallery.html')">Gallery</a>
+        <a onclick="goTo('team.html')">Our Team</a>
+    </nav>
+
+    <header class="section-header">
+        <h2>Meet Our Team</h2>
+        <p>Orang-orang kreatif di balik layar Occupy</p>
+    </header>
+
+    <main class="team-grid">
+        <!-- Anggota 1 -->
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Founder" class="team-img">
+            <h3>Budi Santoso</h3>
+            <p>Founder & Roaster</p>
+            <div class="team-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <!-- Anggota 2 -->
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" alt="Barista" class="team-img">
+            <h3>Siti Aminah</h3>
+            <p>Head Barista</p>
+            <div class="team-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Anggota 3 -->
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Manager" class="team-img">
+            <h3>Andi Wijaya</h3>
+            <p>Space Manager</p>
+            <div class="team-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer-sub">Mari berkolaborasi bersama kami di Occupy Space</div>
+
+    <script>
+        function goTo(page) {
+            const separator = page.includes('?') ? '&' : '?';
+            window.location.href = page.includes('moved') ? page : page + separator + "moved=true";
+        }
+    </script>
+</body>
+</html>
